@@ -60,7 +60,8 @@ for row in range(len(numRows) - 3):
         # diagonal product
         diagProd = numRows[row][col] * numRows[row + 1][col + 1] * numRows[row + 2][col + 2] * numRows[row + 3][col + 3]
         # second diagonal product
-        diagProd2 = numRows[row][col + 3] * numRows[row + 1][col + 2] * numRows[row + 2][col + 1] * numRows[row + 3][col]
+        diagProd2 = numRows[row][col + 3] * numRows[row + 1][col + 2] * numRows[row + 2][col + 1] * numRows[row + 3][
+            col]
 
         if max(diagProd, diagProd2) > best:
             best = max(diagProd, diagProd2)
@@ -73,13 +74,10 @@ for row in range(len(numRows) - 3):
 
 for row in range(len(numRows)):
     for col in range(3, len(numRows[0]) - 3):
+        # row product
         rowProd = numRows[row][col] * numRows[row][col + 1] * numRows[row][col + 2] * numRows[row][col + 3]
 
     if rowProd > best:
         best = rowProd
-
-
-
-
 
 print(best)
